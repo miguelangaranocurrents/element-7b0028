@@ -41,6 +41,12 @@
     display: flex;
 }
 
+/* Let the body shrink to the available width (e.g. when it contains a wide code block)
+   rather than growing to its min-content width and pushing text out of view. */
+.annotated > :first-child {
+    min-width: 0;
+}
+
 .annotatedInline {
     display: inline-flex;
 }

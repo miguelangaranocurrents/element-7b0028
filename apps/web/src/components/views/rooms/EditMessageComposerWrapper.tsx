@@ -90,9 +90,11 @@ export function EditMessageComposerWrapper(props: IEditMessageComposerProps): JS
     );
 
     return (
-        <div>
+        // No wrapping element: the editor must be a direct child of the event tile body slot so it keeps
+        // its `overflow: visible` styling, otherwise the autocomplete shown above it would be clipped.
+        <>
             <MessageComposerUrlPreviewWrapper urlPreviewVm={vm} />
             {editor}
-        </div>
+        </>
     );
 }
